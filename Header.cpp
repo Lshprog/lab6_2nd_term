@@ -19,6 +19,11 @@ grpahc::Graph::Graph(int v)
 	adj = new std::list<int>[v];
 }
 
+grpahc::Graph::~Graph()
+{
+	delete[] adj;
+}
+
 void grpahc::Graph::connected_components()
 {
 	int totalconcomp = 0;
@@ -35,6 +40,7 @@ void grpahc::Graph::connected_components()
 		}
 	}
 	std::cout << "total num of con comp = " << totalconcomp<<"\n";
+	delete[] visited;
 	return;
 }
 
